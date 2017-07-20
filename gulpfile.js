@@ -4,9 +4,14 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     watch = require('gulp-watch'),
     eslint = require('gulp-eslint'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    cssnano = require('gulp-cssnano'),
+    prettyError = require('gulp-prettyerror');
 
-gulp.task('scripts', function(){
+
+gulp.task('scripts', ['lint'], function(){
   gulp.src('./js/*.js') // What files do we want gulp to consume?
     .pipe(uglify()) // Call the uglify function on these files
     .pipe(rename({ extname: '.min.js' })) // Rename the uglified file
@@ -21,25 +26,33 @@ gulp.task('browser-sync', function() {
         }
     }); //end of browserSync init
 
-    gulp.watch('./build/js/*.js').on('change', browserSync.reload);
+    gulp.watch(['build/css/*.css', 'build/js/*.js', 'index.html']).on('change', browserSync.reload);
 }); //end of gulptask browsersync
 
 // gulp watch things
 gulp.task('watch', function() {
-   gulp.watch('./js/*.js', ['scripts']);
+    gulp.watch('./sass/*.scss', ['sass']);
+    gulp.watch('./js/*.js', ['scripts']);
 });
 
 gulp.task('lint', () => {
     return gulp.src(['./js/*.js','!node_modules/**'])
-        // eslint() attaches the lint output to the "eslint" property
-        // of the file object so it can be used by other modules.
         .pipe(eslint())
-        // eslint.format() outputs the lint results to the console.
-        // Alternatively use eslint.formatEach() (see Docs).
         .pipe(eslint.format())
-        // To have the process exit with an error code (1) on
-        // lint error, return the stream and pipe to failAfterError last.
         .pipe(eslint.failAfterError());
 });
 
-gulp.task('default', ['lint', 'watch', 'browser-sync']);
+gulp.task('sass', function() {
+   gulp.src('./sass/style.scss')
+      .pipe(prettyError())
+      .pipe(sass())
+      .pipe(autoprefixer({
+         browsers: ['last 2 versions']
+       }))
+      .pipe(gulp.dest('./build/css'))
+      .pipe(cssnano())
+      .pipe(rename('style.min.css'))
+      .pipe(gulp.dest('./build/css'));
+});
+
+gulp.task('default', ['watch', 'browser-sync']);
