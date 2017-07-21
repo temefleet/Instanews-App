@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  width: 100%;
+  height: auto;
+  img {
+    max-width: 220px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+  .choose-a-section {
+    width: 100%;
+    p {
+      font-size: .8rem;
+      margin-top: 0;
+    }
+    select {
+      margin-top: 1rem;
+      width: 120px;
+      margin-top: 0;
+    }
+  }
+}
