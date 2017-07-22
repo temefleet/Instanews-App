@@ -4,6 +4,11 @@ html {
   font-weight: 300;
   color: $main-font-color;
   outline: none;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .container {
@@ -12,12 +17,12 @@ html {
   align-items: center;
   text-align: center;
   min-height: 100vh;
-  background-color: black;
   justify-content: center;
+  margin: 0 auto;
+  max-width: 48rem;
 }
 
 ul {
   list-style: none;
   display: none;
-  padding: 0;
 }
