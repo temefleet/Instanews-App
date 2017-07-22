@@ -1,9 +1,10 @@
 footer {
   align-self: bottom;
   width: 100%;
-  margin-bottom: 3rem;
+  margin-bottom: 0;
   p {
-    color: #c2c2c2;
+    color: $footer-font-color;
     font-size: .9rem;
+    margin-bottom: 0;
   }
 }

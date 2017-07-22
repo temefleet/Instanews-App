@@ -396,7 +396,9 @@ template {
 html {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 300; }
+  font-weight: 300;
+  color: #ffffff;
+  outline: none; }
 
 .container {
   display: -webkit-box;
@@ -409,18 +411,24 @@ html {
           align-items: center;
   text-align: center;
   min-height: 100vh;
-  margin: 0 auto;
-  color: #fff;
   background-color: black;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
 
+ul {
+  list-style: none;
+  display: none;
+  padding: 0; }
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: auto; }
   header img {
     max-width: 220px;
@@ -432,15 +440,30 @@ header {
       font-size: .8rem;
       margin-top: 0; }
     header .choose-a-section select {
-      margin-top: 1rem;
       width: 120px;
-      margin-top: 0; }
+      margin-top: 0;
+      font-size: 1.1rem; }
+
+.main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+#loader {
+  display: none;
+  width: 40px;
+  height: 100%; }
 
 footer {
   -ms-flex-item-align: bottom;
       align-self: bottom;
   width: 100%;
-  margin-bottom: 3rem; }
+  margin-bottom: 0; }
   footer p {
     color: #c2c2c2;
-    font-size: .9rem; }
+    font-size: .9rem;
+    margin-bottom: 0; }
