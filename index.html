@@ -10,10 +10,10 @@
 </head>
 <body>
   <div class="container">
-    <header>
+    <header class="clean">
       <img src="images/nyt-logo.svg" alt="New York Times Logo" class="logo">
       <div class="choose-a-section">
-        <p>Choose a section:</p>
+        <p class= "header-text">Choose a section:</p>
         <select id="selector" name="sections" form="sections">
           <option>Sections...</option>
           <option id="category" value="home">Home</option>
@@ -27,7 +27,7 @@
     </header>
 
     <div class="main-content">
-      <img id="hiddeLoader" src="images/ajax-loader.gif" alt="Loading...">
+      <img id="loader" src="images/ajax-loader.gif" alt="Loading...">
       
       <ul class="articles">
         
@@ -35,7 +35,7 @@
     </div>
 
     <footer>
-      <p>© Copyright 2017 INSTANEWS</p>
+      <p id="copyright">© Copyright 2017 INSTANEWS</p>
     </footer>
   </div>
 

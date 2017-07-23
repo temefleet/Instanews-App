@@ -411,9 +411,6 @@ html {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   text-align: center;
   min-height: 100vh;
   -webkit-box-pack: center;
@@ -426,7 +423,9 @@ ul {
   list-style: none;
   display: none; }
 
-header {
+.clean {
+  width: 100%;
+  padding: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -434,20 +433,37 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: auto; }
-  header img {
+  height: 90vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .clean img {
     max-width: 220px;
-    padding-top: 50px;
+    padding-top: 20vh;
     padding-bottom: 20px; }
-  header .choose-a-section {
-    width: 100%; }
-    header .choose-a-section p {
-      font-size: .8rem;
-      margin-top: 0; }
-    header .choose-a-section select {
-      width: 120px;
-      margin-top: 0;
-      font-size: 1.1rem; }
+
+.choose-a-section {
+  width: 100%; }
+  .choose-a-section .header-text {
+    font-size: .8rem;
+    margin-top: 0; }
+  .choose-a-section select {
+    width: 120px;
+    margin-top: 0;
+    font-size: 1.1rem; }
+
+.busy {
+  padding: 3rem;
+  -ms-flex-item-align: top;
+      align-self: top;
+  height: auto;
+  width: 100%; }
+  .busy img {
+    height: 150px;
+    width: 150px;
+    margin: 0 auto; }
+  .busy .header-text {
+    margin-top: 1rem; }
 
 .main-content {
   display: -webkit-box;
@@ -460,18 +476,31 @@ header {
 
 #loader {
   display: none;
-  width: 40px;
-  height: 100%;
   position: absolute;
-  top: 50vh;
-  left: 50vw; }
+  width: 40px;
+  top: 50%;
+  left: 50%; }
+
+.articles {
+  margin-top: 0;
+  padding: 0; }
+
+.article-box {
+  padding-bottom: 100%;
+  height: 100px;
+  background: cover;
+  width: 100%;
+  background-repeat: no-repeat; }
 
 footer {
   -ms-flex-item-align: bottom;
       align-self: bottom;
   width: 100%;
   margin-bottom: 0; }
-  footer p {
+  footer #error {
+    font-style: italic;
+    margin: 0 1rem; }
+  footer #copyright {
     color: #c2c2c2;
     font-size: .9rem;
     margin-bottom: 0; }

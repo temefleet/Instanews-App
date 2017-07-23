@@ -2,7 +2,11 @@ footer {
   align-self: bottom;
   width: 100%;
   margin-bottom: 0;
-  p {
+  #error {
+    font-style: italic;
+    margin: 0 1rem;
+  }
+  #copyright {
     color: $footer-font-color;
     font-size: .9rem;
     margin-bottom: 0;

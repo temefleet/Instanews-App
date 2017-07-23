@@ -13,11 +13,15 @@ $(function(){
         twelveArticles = {},
         articleImage = "";
 
-    // clear articles
+    // clear articles and footer error
     $('.articles').empty();
+    $('#error').empty();
 
     // show loader    
     $('#loader').show();
+
+    // move header top
+    $('header').removeClass('clean').addClass('busy');
     
     // = user selection
     userInput = $('#selector').val();
@@ -47,12 +51,17 @@ $(function(){
       $('.articles').show();
       
       $.each(twelveArticles, function(key, value){
+        //get image url
+        articleImage = value.multimedia[4].url;
+        
+        //append markup
         $('.articles').append(
           '<li>' +
             '<a href="' + value.url + '">' +
-              '<div class="article-text">' +
-                '<p>' + value.abstract + '</p>' +
-              '</div' +
+              '<div class="article-box"' +
+                'style="background-image: url(' + articleImage + ')">' +
+                  '<p>' + value.abstract + '</p>' +
+              '</div>' +
             '</a>' +
           '</li>'
         ); //end append
@@ -60,7 +69,9 @@ $(function(){
     }) //end done
     
     .fail(function(err) {
-      alert("Sorry! We've encountered a problem! Abandon Ship!");
+      $('footer').append(
+          '<p id="error">Sorry! There a problem, please try again.</p>'
+        ); //end append
       throw err;
     })
     .always(function(){

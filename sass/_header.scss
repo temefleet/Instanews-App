@@ -1,15 +1,21 @@
-header {
+//style before article selection
+.clean {
+  width: 100%;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
-  height: auto;
+  height: 90vh;
+  align-items: center;
   img {
     max-width: 220px;
-    padding-top: 50px;
+    padding-top: 20vh;
     padding-bottom: 20px;
   }
-  .choose-a-section {
+}
+
+.choose-a-section {
     width: 100%;
-    p {
+    .header-text {
       font-size: .8rem;
       margin-top: 0;
     }
@@ -18,5 +24,20 @@ header {
       margin-top: 0;
       font-size: 1.1rem;
     }
+  }
+
+//style after article selection
+.busy {
+  padding: 3rem;
+  align-self: top;
+  height: auto;
+  width: 100%;
+  img {
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+  }
+  .header-text {
+    margin-top: 1rem;
   }
 }
