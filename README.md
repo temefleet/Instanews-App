@@ -16,7 +16,7 @@
 <li>Gulp</li>
 </ul>
 
-<h4>Screenshot:</h4>
+<h4>Screenshots:</h4>
 
 <h3>Desktop</h3>
 <img src="https://user-images.githubusercontent.com/8882336/28546791-cd12e4fc-7080-11e7-9d32-0a456ea9fe01.png"
