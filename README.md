@@ -18,7 +18,15 @@
 
 <h4>Screenshot:</h4>
 
-<p align="center">
-  <img src="#"
-  width="80%"/>
-</p>
+<h3>Desktop</h3>
+<img src="https://user-images.githubusercontent.com/8882336/28546791-cd12e4fc-7080-11e7-9d32-0a456ea9fe01.png"
+  width="60%"/>
+
+<h3>Tablet</h3>
+<img src="https://user-images.githubusercontent.com/8882336/28546789-cd0cc496-7080-11e7-8f93-2e539717c58c.png"
+  width="15%"/>
+
+<h3>Mobile</h3>
+<img src="https://user-images.githubusercontent.com/8882336/28546790-cd108630-7080-11e7-8f29-53cfd9a7f111.png"
+  width="10%"/>
+
