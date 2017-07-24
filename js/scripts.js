@@ -69,10 +69,11 @@ $(function(){
     }) //end done
     
     .fail(function(err) {
-      $('footer').append(
+      $('header').removeClass('busy').addClass('clean');
+      
+      $('footer').prepend(
           '<p id="error">Sorry! There a problem, please try again.</p>'
         ); //end append
-      throw err;
     })
     .always(function(){
       //remove load

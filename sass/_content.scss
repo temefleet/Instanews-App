@@ -4,6 +4,7 @@
   width: 40px;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .articles {
@@ -34,3 +35,5 @@
     }
   }
 }
+
+// if your at the part wher eyou animate the text on hover, try translate: scaleY() instead of giving it a fixed height: %
