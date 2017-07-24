@@ -487,6 +487,10 @@ ul {
     @media (min-width: 600px) {
       .choose-a-section .header-text {
         font-size: .9rem; } }
+  .choose-a-section select {
+    margin-top: 0;
+    font-size: 1.1rem;
+    padding: 0.2rem 0.3rem 0.2rem 0; }
 
 .busy {
   padding: 3rem;
