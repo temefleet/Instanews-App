@@ -20,9 +20,12 @@ $(function(){
     // show loader    
     $('#loader').show();
 
+    // keep footer on bottom
+    $('footer').addClass('absolute-footer');
+
     // move header top
     $('header').removeClass('clean').addClass('busy');
-    
+  
     // = user selection
     userInput = $('#selector').val();
     
@@ -45,8 +48,6 @@ $(function(){
         return filterArray.multimedia.length > 0;
       });
       twelveArticles = hasImage.slice(0, 12);
-        
-      console.log(twelveArticles);
 
       $('.articles').show();
       
@@ -71,13 +72,18 @@ $(function(){
     .fail(function(err) {
       $('header').removeClass('busy').addClass('clean');
       
+      // error message in footer
       $('footer').prepend(
           '<p id="error">Sorry! There a problem, please try again.</p>'
-        ); //end append
+      ); //end append
     })
     .always(function(){
+      //remove absolute footer
+      $('footer').removeClass('absolute-footer');
+
       //remove load
       $('#loader').hide();
+
     }); //end ajax call
   }); // end selector
 }); //end main

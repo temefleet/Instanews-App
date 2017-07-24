@@ -5,6 +5,7 @@ html {
   color: $main-font-color;
   outline: none;
   background-color: black;
+  height: 100%;
 }
 
 * {
@@ -19,9 +20,11 @@ html {
   justify-content: center;
   margin: 0 auto;
   max-width: 48rem;
+  
   @include tablet {
-   max-width: 100%;
+    max-width: 100%;
   }
+  
   @include desktop {
     justify-content: flex-start;
   }
