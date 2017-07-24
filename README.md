@@ -5,6 +5,8 @@
 
 <p>The goal of the project was to learn how to use Ajax to retrieve content from an API as well as getting used to working with a preprocessor (Gulp), Sass and various other Node Modules.</p>
 
+<p>Mobile view was first implemented using Flexbox. This is now the fallback view for browsers which do not support CSS Grid. If CSS Grid is supported then it is used in 3 different views: Desktop ( > 1000px), Tablet, and Mobile ( < 600px).</p> 
+
 <h6>Technologies used in this project:</h6>
 <ul>
 <li>HTML5</li>
