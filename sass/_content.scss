@@ -7,9 +7,24 @@
   transform: translate(-50%, -50%);
 }
 
+.main-content ul {
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
 .articles {
   margin-top: 0;
   padding: 0;
+  @include tablet {
+    width: 100%;
+  }
   
   a {
     text-decoration: none;

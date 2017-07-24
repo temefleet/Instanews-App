@@ -2,6 +2,11 @@ footer {
   align-self: bottom;
   width: 100%;
   margin-bottom: 0;
+
+  @include desktop {
+    text-align: left;
+    padding-left: 4rem;
+  }
   #error {
     font-style: italic;
     margin: 0 1rem;

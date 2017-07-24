@@ -11,10 +11,16 @@
     flex-direction: row;
     justify-content: center;
   }
-  img {
+
+  @include desktop {
+    justify-content: flex-start;
+  }
+
+  .logo {
     width: 220px;
     padding-top: 20vh;
     padding-bottom: 20px;
+    
     @include tablet {
       padding: 0;
       max-width: 30%;
