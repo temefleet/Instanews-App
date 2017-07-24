@@ -1,4 +1,5 @@
 $(function(){
+  
   //on selecting category
   $('#selector').on('change', function(event) {
 
@@ -6,12 +7,12 @@ $(function(){
     event.preventDefault();
 
     // variable declarations
-    var userInput = "",
-        url = "",
+    var userInput = '',
+        url = '',
         result = {},
         hasImage = {},
         twelveArticles = {},
-        articleImage = "";
+        articleImage = '';
 
     // clear articles and footer error
     $('.articles').empty();
@@ -76,6 +77,7 @@ $(function(){
       $('footer').prepend(
           '<p id="error">Sorry! There a problem, please try again.</p>'
       ); //end append
+      throw err;
     })
     .always(function(){
       //remove absolute footer

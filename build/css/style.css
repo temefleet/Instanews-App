@@ -404,7 +404,8 @@ html {
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  outline: none; }
 
 .container {
   display: -webkit-box;
@@ -445,7 +446,10 @@ ul {
   height: 90vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   @media (min-width: 600px) {
     .clean {
       -webkit-box-orient: horizontal;
@@ -462,7 +466,6 @@ ul {
               justify-content: flex-start; } }
   .clean .logo {
     width: 220px;
-    padding-top: 20vh;
     padding-bottom: 20px; }
     @media (min-width: 600px) {
       .clean .logo {
@@ -484,15 +487,11 @@ ul {
     @media (min-width: 600px) {
       .choose-a-section .header-text {
         font-size: .9rem; } }
-  .choose-a-section select {
-    width: 140px;
-    margin-top: 0;
-    font-size: 1.1rem; }
 
 .busy {
   padding: 3rem;
-  -ms-flex-item-align: top;
-      align-self: top;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   height: auto;
   width: 100%; }
   @media (min-width: 600px) {
@@ -579,8 +578,8 @@ ul {
         width: 100%; }
 
 footer {
-  -ms-flex-item-align: bottom;
-      align-self: bottom;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   width: 100%;
   margin-bottom: 0;
   position: relative;

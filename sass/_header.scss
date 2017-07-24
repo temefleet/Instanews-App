@@ -6,6 +6,7 @@
   flex-direction: column;
   height: 90vh;
   align-items: center;
+  justify-content: center;
   
   @include tablet {
     flex-direction: row;
@@ -18,7 +19,6 @@
 
   .logo {
     width: 220px;
-    padding-top: 20vh;
     padding-bottom: 20px;
     
     @include tablet {
@@ -47,17 +47,17 @@
       font-size: .9rem;
     }
   }
-  select {
-    width: 140px;
-    margin-top: 0;
-    font-size: 1.1rem;
-  }
+  // select {
+  //   width: 140px;
+  //   margin-top: 0;
+  //   font-size: 1.1rem;
+  // }
 }
 
 //style after article selection
 .busy {
   padding: 3rem;
-  align-self: top;
+  align-self: flex-start;
   height: auto;
   width: 100%;
   
@@ -72,6 +72,7 @@
     height: 150px;
     width: 150px;
     margin: 0 auto;
+    
     @include tablet {
       width: 75px;
       height: 75px;
@@ -82,6 +83,7 @@
  
   .header-text {
     margin-top: 1rem;
+    
     @include tablet {
       margin-top: .5rem;
     }

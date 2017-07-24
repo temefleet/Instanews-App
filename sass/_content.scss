@@ -7,11 +7,14 @@
   transform: translate(-50%, -50%);
 }
 
-main ul  {
-  @supports (display:grid) {
-    display: grid;
-    grid-template-rows: repeat(12, 1fr);
+@supports (display:grid) {
+  main ul { display: grid;
+         grid-template-rows: repeat(12, 1fr);
   }
+}
+
+main ul  {
+  
   @include tablet {
     display: grid;
     grid-template-columns: 1fr 1fr;
