@@ -18,6 +18,10 @@ footer {
     font-size: .9rem;
     margin-bottom: 2rem;
   }
+
+  #copyright > .uppercase {
+    text-transform: uppercase;
+  }
 }
 
 //temp class for loading sequence so footer doesn't jump up
