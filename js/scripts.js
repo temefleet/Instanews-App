@@ -31,7 +31,7 @@ $(function(){
     userInput = $('#selector').val();
     
     // nyt api address creation
-    url = 'https://api.nytismes.com/svc/topstories/v2/';
+    url = 'https://api.nytimes.com/svc/topstories/v2/';
     url += `${userInput}.json?`;
     url += $.param({
       'api-key': '90324784f44b48cd8cd582865f7b09d2'
