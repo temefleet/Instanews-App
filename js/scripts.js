@@ -58,14 +58,14 @@ $(function(){
         
         //append markup
         $('.articles').append(
-          '<li>' +
-            '<a href="' + value.url + '">' +
-              '<div class="article-box"' +
-                'style="background-image: url(' + articleImage + ')">' +
-                  '<p>' + value.abstract + '</p>' +
-              '</div>' +
-            '</a>' +
-          '</li>'
+          `<li>
+            <a href="${value.url}">
+              div class="article-box"
+                style="background-image: url(${articleImage})">
+                  <p>${value.abstract}</p>
+              </div>
+            </a>
+          </li>`
         ); //end append
       }); //end each
     }) //end done
