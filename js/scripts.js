@@ -7,7 +7,7 @@ $(function(){
     event.preventDefault();
 
     // variable declarations
-    var userInput = '',
+    let userInput = '',
         url = '',
         result = {},
         hasImage = {},
@@ -31,8 +31,8 @@ $(function(){
     userInput = $('#selector').val();
     
     // nyt api address creation
-    url = 'https://api.nytimes.com/svc/topstories/v2/';
-    url += userInput + '.json?';
+    url = 'https://api.nytismes.com/svc/topstories/v2/';
+    url += `${userInput}.json?`;
     url += $.param({
       'api-key': '90324784f44b48cd8cd582865f7b09d2'
     }); // end of url declaration
@@ -42,17 +42,17 @@ $(function(){
       url: url,
       method: 'GET',
     })
-    .done(function(data) {
+    .done( (data) => {
       
       result = data.results;
-      hasImage = result.filter(function(filterArray) {
+      hasImage = result.filter((filterArray) => {
         return filterArray.multimedia.length > 0;
       });
       twelveArticles = hasImage.slice(0, 12);
 
       $('.articles').show();
       
-      $.each(twelveArticles, function(key, value){
+      $.each(twelveArticles, (key, value) => {
         //get image url
         articleImage = value.multimedia[4].url;
         
@@ -70,16 +70,15 @@ $(function(){
       }); //end each
     }) //end done
     
-    .fail(function(err) {
+    .fail( () => {
       $('header').removeClass('busy').addClass('clean');
       
       // error message in footer
       $('footer').prepend(
           '<p id="error">Sorry! There a problem, please try again.</p>'
       ); //end append
-      throw err;
     })
-    .always(function(){
+    .always( () => {
       //remove absolute footer
       $('footer').removeClass('absolute-footer');
 

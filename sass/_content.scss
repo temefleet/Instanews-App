@@ -9,8 +9,9 @@
 
 // switches to display grid if supported. otherwise uses flex in mobile mode.
 @supports (display:grid) {
-  main ul { display: grid;
-         grid-template-rows: repeat(12, 1fr);
+  main ul { 
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
   }
 }
 
