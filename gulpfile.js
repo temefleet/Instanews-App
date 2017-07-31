@@ -1,5 +1,5 @@
 // Require Gulp first!
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     watch = require('gulp-watch'),
@@ -8,15 +8,22 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
-    prettyError = require('gulp-prettyerror');
+    prettyError = require('gulp-prettyerror'),
+    babel = require('gulp-babel');
 
+// Gulp tasks below :)
 
+// Gulp Scripts task ;)
 gulp.task('scripts', ['lint'], function(){
   gulp.src('./js/*.js') // What files do we want gulp to consume?
+    // Gulp Babel
+    .pipe(babel({
+        presets: ['es2015']
+    }))
     .pipe(uglify()) // Call the uglify function on these files
     .pipe(rename({ extname: '.min.js' })) // Rename the uglified file
     .pipe(gulp.dest('./build/js')) // Where do we put the result?
-});
+});  
 
 // Static server
 gulp.task('browser-sync', function() {
@@ -35,6 +42,7 @@ gulp.task('watch', function() {
     gulp.watch('./js/*.js', ['scripts']);
 });
 
+// Gulp linting task for javascript yesiree
 gulp.task('lint', () => {
     return gulp.src(['./js/*.js','!node_modules/**'])
         .pipe(eslint())
@@ -42,6 +50,7 @@ gulp.task('lint', () => {
         .pipe(eslint.failAfterError());
 });
 
+// Gulp saaaasssss bitches
 gulp.task('sass', function() {
    gulp.src('./sass/style.scss')
       .pipe(prettyError())

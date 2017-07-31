@@ -60,7 +60,7 @@ $(function(){
         $('.articles').append(
           `<li>
             <a href="${value.url}">
-              div class="article-box"
+              <div class="article-box"
                 style="background-image: url(${articleImage})">
                   <p>${value.abstract}</p>
               </div>
