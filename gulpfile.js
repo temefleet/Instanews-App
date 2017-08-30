@@ -6,11 +6,26 @@ var gulp = require('gulp'),
     eslint = require('gulp-eslint'),
     browserSync = require('browser-sync').create(),
     sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
     prettyError = require('gulp-prettyerror');
-
-
+    
+gulp.task('sass', function() {
+    gulp.src('./sass/style.scss')
+        .pipe(prettyError())
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
+        .pipe(gulp.dest('./build/css'))
+        .pipe(cssnano())
+        .pipe(rename('style.min.css'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./build/css'));
+});
+    
 gulp.task('scripts', ['lint'], function(){
   gulp.src('./js/*.js') // What files do we want gulp to consume?
     .pipe(uglify()) // Call the uglify function on these files
@@ -42,17 +57,5 @@ gulp.task('lint', () => {
         .pipe(eslint.failAfterError());
 });
 
-gulp.task('sass', function() {
-   gulp.src('./sass/style.scss')
-      .pipe(prettyError())
-      .pipe(sass())
-      .pipe(autoprefixer({
-         browsers: ['last 2 versions']
-       }))
-      .pipe(gulp.dest('./build/css'))
-      .pipe(cssnano())
-      .pipe(rename('style.min.css'))
-      .pipe(gulp.dest('./build/css'));
-});
 
 gulp.task('default', ['watch', 'browser-sync']);

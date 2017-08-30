@@ -1,7 +1,12 @@
-$(function(){
+$(document).ready(function () {
   
+  $('select').selectric({
+    maxHeight: 200
+  });
+
+  $(function() {
   //on selecting category
-  $('#selector').on('change', function(event) {
+  $('select').on('change', function(event) {
 
     //prevent defaults
     event.preventDefault();
@@ -75,7 +80,7 @@ $(function(){
       
       // error message in footer
       $('footer').prepend(
-          '<p id="error">Sorry! There a problem, please try again.</p>'
+          '<p id="error">Sorry! There was a problem, please try again.</p>'
       ); //end append
       throw err;
     })
@@ -88,4 +93,5 @@ $(function(){
 
     }); //end ajax call
   }); // end selector
+  });
 }); //end main
